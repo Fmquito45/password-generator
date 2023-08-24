@@ -17,10 +17,10 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
  var charLength = prompt ("How many characters would you like your password to contain?");
  if (isNaN(charLength) || Number(charLength)<8 || Number(charLength)>128){
-  alert ("Please insert valid Numeric characters!!! \nChoose a length of at least 8 characters and no more than 128 character.")
- }
+  return alert ("Please insert valid Numeric characters!!! \nChoose a length of at least 8 characters and no more than 128 character.")
+ } 
 
-var specicalChars = '!@#$%^&*()=+-[]{};:,./?'
+var specialChars = '!@#$%^&*()=+-[]{};:,./?'
 var nums = '0123456789' 
 var lowercaseChars = 'abcdefghijklmnopqrstuvwxyz'
 var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -31,5 +31,29 @@ var isNumericChar = confirm ("Click OK to confrim #numeric characters");
 var isLowerChar = confirm ("Click OK to confrim lowercase characters");
 var isUpperChar = confirm ("Click OK to confrim UPPERCASE characters");
 
-if ()
+if (isSpecialChar || isNumericChar || isLowerChar || isUpperChar){
+  var characters = ''
+  if (isSpecialChar){
+    characters+=specialChars
+  }
+  if (isNumericChar){
+    characters+=nums
+  }
+  if (isLowerChar){
+    characters+=lowercaseChars
+  }
+  if (isUpperChar){
+    characters+=uppercaseChars
+  }
+  var result =''
+  let counter = 0;
+    while (counter < Number(charLength)) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+      counter += 1;
+    }
+    return result;
+} else {
+  alert ("Select at least one character type!")
+  return ''
+}
 } 
