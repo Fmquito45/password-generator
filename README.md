@@ -13,4 +13,4 @@ To use this applicatoin click on "Generate Password". You'll be prompted to sele
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+https://fmquito45.github.io/password-generator/
