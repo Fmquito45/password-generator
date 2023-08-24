@@ -12,3 +12,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+function generatePassword() {
+ var charLength = prompt ('How many characters would you like your password to contain?')
+ if (isNaN(charLength)){
+  alert ("Please insert valid Numeric Number!!!")
+ }
+
+} 
